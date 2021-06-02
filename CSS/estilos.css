@@ -1,0 +1,272 @@
+/* RESET AREA */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+li {list-style: none;}
+
+.clearfix {clear: both;}
+
+
+
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+
+/* END RESET AREA */
+
+
+/*variables  */
+
+:root {
+
+    /*colores*/
+    --blue-color: cadetblue;
+    --pink-color: pink;
+    --violet-color:rgb(246, 111, 133);
+    /*tipografía*/
+    --normal: 12px;
+    /*espaciado-padding*/
+    --space: 10px;
+
+}
+
+
+
+html, body {
+    background-color: var(--blue-color);
+    font-size: var(--normal);
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    height: 100%;
+
+}
+
+body {
+    position: relative;
+}
+
+/*INICIO DE nav Seccion */  
+
+
+nav {
+    background: var(--pink-color);
+    padding: var(--space);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Bebas Neue', cursive;
+
+
+}
+
+nav, ul {
+    display: flex;
+
+}
+
+nav, li {
+    padding-right: var(--space);
+    list-style: none;  
+}
+
+nav li a:hover {
+    color: white;
+
+} 
+
+/*FIN de nav Seccion */ 
+
+/*INICIO DE MAIN SECTION*/ 
+
+.main_section {
+    padding: 5%; 
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    
+}
+.products {
+    
+    display: flex;
+    background-image: url(../images/mar3.gif);
+    background-size: cover;
+    background-position: center top;
+    flex-wrap: wrap;
+    font-size: var(--normal);
+    padding: var(--space);
+    justify-content: space-between;
+    align-content: center;
+}
+
+.product {
+    padding: var(--space);
+}
+
+.product .content {
+    background-color: white;
+    padding: var(--space);
+
+
+}
+
+.main_button {
+    background-color:pink;
+    width: 100%;
+    padding: 5px;
+    font-size: var(--normal);
+    color: white;
+    border: 0%;
+    cursor: pointer;
+    border-radius: 2px;
+
+
+}
+
+.main_button:hover {
+    background-color:var(--violet-color);
+
+}
+
+/*FIN DE MAIN SECTION*/
+
+/*certificaciones*/
+
+.certifications {
+    display: flex;
+    background-color: #ffffff;
+    background-size: cover;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: var(--normal);
+    padding: var(--space);
+    align-content: center;
+}
+
+    
+
+
+
+/*comments*/
+
+
+.comments-row {
+    display: flex;
+    background: white;
+    flex-wrap: wrap;
+    font-size: var(--normal);
+    padding: var(--space);
+    justify-content: space-between;
+    align-content: center;
+   
+}
+
+.comment {
+    padding: 9px 9px 9px 9px;
+    background-color: white;
+    border: solid;
+    width: auto;
+    margin: auto;
+
+}
+
+.consumer-comment {
+    text-align: center;
+    
+
+}
+
+.comments-row img {
+width: 100%;
+height: auto;
+margin: auto;
+text-align: center;
+
+}
+
+/*contact*/
+
+.block {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.about-block {
+    background: #fff;
+    padding: 65px 65px 80px 75px;
+    text-align: center;
+}
+
+.contacts-block {
+    padding-bottom: 160px;
+}
+
+.undertitle-text {
+    font-size: 19px;
+    margin: auto;
+}
+
+
+.form-block {
+    width: 700px;
+    margin: 75px auto 0 auto;
+
+}
+
+input {
+    line-height: normal;
+}
+
+.form-block .form-input:first-child {
+    margin-right: 2%;
+}
+.form-input {
+    width: 49%;
+    float: left;
+    margin-bottom: 2%;
+}
+.form-input, .textarea {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #E8E8E8;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+
+.textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 2%;
+    height: 145px;
+    overflow: auto;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    padding: 12px;
+    font-size: 19px;
+    border-radius: 0;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+footer {
+    padding: var(--space);
+    text-align: center;
+    background: #cccc;
+}
+
