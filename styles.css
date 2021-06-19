@@ -1,58 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 :root {
-  --solid: rgb(255, 255, 255);
-  --dark: #ffffff;
-  --darker:#888;
-  --light: #ffffff;
-  --mesh: background-image:#ff0000;background-image:  
-  radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0, transparent 50%),  
-  radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0, transparent 50%),  
-  radial-gradient(at 0% 50%, hsla(355,85%,93%,1) 0, transparent 50%),  
-  radial-gradient(at 80% 50%, hsla(340,100%,76%,1) 0, transparent 50%),  
-  radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0, transparent 50%),  
-  radial-gradient(at 80% 100%, hsla(242,100%,70%,1) 0, transparent 50%),  
-  radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0, transparent 50%);
+
+  --white: #ffffff;
+  --dark:rgb(90, 90, 90);
+  --color1: hsla(227,88%,64%,1);
+  --hcolor2: hsla(258,77%,74%,1);
+  --color3: rgb(253, 205, 230) ;
+  --mesh: background-image:#ff99b4;background-image:  
+  radial-gradient(at 39% 28%, hsla(171,98%,68%,1) 0, transparent 47%),  
+  radial-gradient(at 2% 41%, hsla(232,81%,67%,1) 0, transparent 52%),  
+  radial-gradient(at 19% 22%, hsla(294,87%,70%,1) 0, transparent 52%),  
+  radial-gradient(at 92% 58%, hsla(204,89%,65%,1) 0, transparent 46%);
+  
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  text-decoration: none;
 }
 
 body {
-  background: var(--mesh);
+  /* background-color: var(--mesh); */
   font-family: 'Montserrat', sans-serif;
+  font-weight: lighter;
   width: 100%;
-  color: var(--solid);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 1 0 auto;
+  background-color: var(--mesh);
+  color: var(--dark) ;
+  
+  
 }
 
 /*header*/
 
-ul {
+.nav-bar-list {
   list-style: none;
-  font-size: medium;
+  font-size: small;
+
 }
 
-li {
+.nav-bar-list li {
   float: left;
   background: transparent;
 }
 
-li a {
+.nav-bar-list li a {
   display: block;
-  color: var(--solid);
+  color: var(--darker);
   text-align: center;
   padding: 10px 16px;
-  text-decoration: none;
   background: linear-gradient(currentColor 0 0) bottom / var(--d, 0) 1px
     no-repeat;
   transition: 0.5s;
@@ -66,7 +64,7 @@ li a:hover {
   height: auto;
   font-size: 1.5em;
   background: transparent;
-  color: var(--solid);
+  color: var(--darker);
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -76,14 +74,16 @@ li a:hover {
 .logo-container {
   display: flex;
   align-items: center;
-  font-family: 'Abril Fatface', cursive;
   font-weight: lighter;
+  
 }
 /* end header */
 
-/* welcome */
-/* animation */
+.content {
+  
+}
 
+/* animation */ /* welcome */
 h1,h2 {
   font-weight: 200;
   margin: 0.4em 0;
@@ -97,7 +97,8 @@ h2 {
 .me-container {
   position: relative;
   text-align: center;
-  height: 200px;
+  height: 250px;
+  /* background-color: var(--highlight); */
 }
 .me {
   position: absolute;
@@ -106,56 +107,66 @@ h2 {
   transform: translate(-50%, -50%);
 }
 
-/* end of animation */
-
-/* end welcome */
+/* end welcome *//* end of animation */
 
 /* aboutme */
 
 #about-me {
-  margin-top: 30px;
+  margin: auto;
   padding: 40px;
   width: 60%;
   display: block;
   margin: auto;
 }
-.desc {
-  margin: 15px;
+#about-me ul {
+  margin: auto;
 }
 
-.desc > p {
-  font-family: 'Montserrat', sans-serif;
+#about-me > ul > li {
   font-weight: lighter ;
   margin-top: 15px;
   margin-bottom: 5px;
+}
+
+.bullet {
+  background-color: var(--highlight);
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
 }
 /* end aboutme */
 
 /* projects */
 #projects {
-  display: flex;
-  justify-content: center;
+  margin: auto;
   align-items: center;
   margin-top: 50px;
   height: 400px;
-  width: 100%;
-  flex-direction: row;
+  width: 50%;
 }
 
 .product {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: calc(100% / 3);
-  margin: 10px;
-  border-radius: 3px;
-  width: 100%;
+  border: 0;
+  margin: 15px 0;
+  background-color: var(--pink);
+  padding: 10px 15px;
+}
+
+.product h3 {
+  bottom: 8px;
+  right: 16px;
+  text-align: end;
+  font-weight: lighter;
+  
+}
+
+.product , img {
   height: auto;
 }
 
 .product > a {
-  text-decoration: none;
+  color: var(--darker);
 }
 
 /* .product > button {
@@ -168,7 +179,7 @@ h2 {
   font-weight: bold;
 } */
 
-.product > a:hover {
+.product:hover {
   opacity: 60%;
   
 }
@@ -176,36 +187,25 @@ h2 {
 
 /* footer */
 footer {
-  margin-top: 30px;
-  background-color: hsla(28,100%,74%,1);
-  padding: 20px;
+  background-color: var(--highlight);
+  padding: 2rem;
+  text-align: center;
+  color: var(--dark);
+}
+footer > div > a {
+  color: var(--dark);
 }
 
-footer > ul {
-  display: flex;
-  justify-content: flex-end;
-}
-
-footer > ul > li {
-  padding: 0 10px;
-  justify-content: flex-end;
-}
-
-footer > span {
-  margin-top: 5px;
-  display: flex;
-  justify-content: flex-end;
-  font-size: 0.9em;
-  color: #444;
-}
 /* end footer */
 @media (max-width: 1768px) {
-  #about-me {
-    padding: 1%;
-  }
+
 }
 
 @media (max-width: 768px) {
+  .me-container {
+    margin-top: 30px;
+  }
+
   #header {
     display: block;
   }
@@ -219,16 +219,13 @@ footer > span {
     text-align: center;
   }
 
-  #projects {
-    flex-direction: column;
-  }
   .product {
-    max-width: 300px;
-    width: 100%;
     margin: 0 auto;
     margin-bottom: 10px;
   }
-
+#projects {
+  width: 90%;
+}
   #welcome {
     width: 100%;
   }
