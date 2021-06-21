@@ -196,7 +196,7 @@ footer > div > a:hover {
 @media (max-width: 768px) {
 
   h1 {
-    font-size: 1em;
+    font-size: 2em;
   }
   .me-container {
     margin-top: 30px;
