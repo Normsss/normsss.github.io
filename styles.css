@@ -188,6 +188,14 @@ footer > div > a:hover {
   
 }
 
+.gh-logo {
+  display:inline-flex;
+  margin-left: 10px;
+}
+.gh-logo svg {
+  margin-left: 10px;
+}
+
 /* end footer */
 @media (max-width: 1768px) {
 
