@@ -31,7 +31,7 @@ body {
 
 /*header*/
 
-.nav-bar-list {
+/* .nav-bar-list {
   list-style: none;
   font-size: small;
 
@@ -40,9 +40,9 @@ body {
 .nav-bar-list li {
   float: left;
   background: transparent;
-}
+} */
 
-.nav-bar-list li a {
+/* .nav-bar-list li a {
   display: block;
   color: var(--white);
   text-align: center;
@@ -50,34 +50,31 @@ body {
   background: linear-gradient(currentColor 0 0) bottom / var(--d, 0) 1px
     no-repeat;
   transition: 0.5s;
-}
+} */
 
-li a:hover {
+/* li a:hover {
   --d: 100%;
-}
+} */
 
 #header {
   height: auto;
   font-size: 1.5em;
   background: transparent;
   color: var(--white);
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-around; */
   padding: 20px;
 }
 
-.logo-container {
+/* .logo-container {
   display: flex;
   align-items: center;
   font-weight: lighter;
   
-}
+} */
 /* end header */
 
-.content {
-  
-}
 
 /* animation */ /* welcome */
 
@@ -98,7 +95,7 @@ h2 {
 .me {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 70%;
   transform: translate(-50%, -50%);
 }
 
