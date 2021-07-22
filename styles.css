@@ -19,11 +19,11 @@
 }
 
 body {
-  /* background-color: var(--mesh); */
+  
   font-family: 'Montserrat', sans-serif;
   font-weight: lighter;
   width: 100%;
-  background-color: var(--mesh);
+  /* background-color: var(--mesh); */
   color: var(--white) ;
   
   
@@ -234,4 +234,17 @@ footer > div > a:hover {
   #about-me {
     width: 90%;
   }
+}
+
+/* backgorund test */
+.mydiv {
+  background: linear-gradient(150deg, #fff102,  #f10271, #00c298);
+  background-size: 400% 300%;
+  animation: BgGradient 5s ease infinite;
+}
+
+@keyframes BgGradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
