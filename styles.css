@@ -19,14 +19,11 @@
 }
 
 body {
-  
   font-family: 'Montserrat', sans-serif;
   font-weight: lighter;
   width: 100%;
   /* background-color: var(--mesh); */
   color: var(--white) ;
-  
-  
 }
 
 /*header*/
@@ -98,18 +95,16 @@ h2 {
   left: 70%;
   transform: translate(-50%, -50%);
 }
-
 /* end welcome *//* end of animation */
 
 /* aboutme */
-
 #about-me {
   margin: auto;
   padding: 40px;
   width: 60%;
   display: block;
-  margin: auto;
 }
+
 #about-me ul {
   margin: auto;
 }
