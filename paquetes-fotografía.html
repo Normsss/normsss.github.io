@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ballet en Foco · Fotografía de Danza</title>
+    
+    <!-- Fuentes elegantes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <style>
+        /* ===== RESET Y BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #faf7f5;
+            color: #2d2a24;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== TIPOGRAFÍA ===== */
+        h1, h2, h3, .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 16px;
+            color: #3a2c2a;
+        }
+
+        h2 .highlight {
+            color: #c29a8c;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #3a2c2a;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #6b5e56;
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* ===== HEADER / HERO ===== */
+        .hero {
+            padding: 60px 0 40px 0;
+            background: linear-gradient(135deg, #f7f0ed 0%, #f0e7e3 100%);
+            border-bottom: 2px solid #ede3de;
+            text-align: center;
+        }
+
+        .hero .logo {
+            font-size: 1.8rem;
+            color: #b28678;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .hero .logo span {
+            color: #3a2c2a;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #5e4f47;
+            max-width: 580px;
+            margin: 8px auto 0;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: #b28678;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 4px 20px;
+            border-radius: 30px;
+            margin-top: 16px;
+            text-transform: uppercase;
+        }
+
+        /* ===== SECCIÓN PAQUETES ===== */
+        .packages {
+            padding: 60px 0;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 28px;
+            margin-top: 16px;
+        }
+
+        .package-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 32px 28px 28px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+            border: 1px solid #ede3de;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.07);
+        }
+
+        .package-card .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #f3ebe7;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+
+        .package-card .card-header .tag {
+            background: #f3ebe7;
+            color: #7a6258;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 2px 14px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .package-card .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #b28678;
+            line-height: 1;
+        }
+
+        .package-card .price small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #8a7a72;
+        }
+
+        .package-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 20px;
+            flex: 1;
+        }
+
+        .package-card ul li {
+            padding: 6px 0 6px 28px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23c29a8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>') left center no-repeat;
+            background-size: 16px;
+            font-size: 0.95rem;
+            color: #3d3530;
+        }
+
+        .package-card ul li strong {
+            font-weight: 600;
+            color: #2d2a24;
+        }
+
+        .package-card .btn {
+            display: inline-block;
+            background: #b28678;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 12px 24px;
+            border-radius: 40px;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.2s ease;
+            margin-top: 8px;
+            border: none;
+            cursor: default;
+            letter-spacing: 0.3px;
+        }
+
+        .package-card .btn:hover {
+            background: #9d7263;
+        }
+
+        .package-card .btn-outline {
+            background: transparent;
+            color: #b28678;
+            border: 1.5px solid #b28678;
+        }
+
+        .package-card .btn-outline:hover {
+            background: #b28678;
+            color: #fff;
+        }
+
+        /* ===== CARD DESTACADA ===== */
+        .package-card.featured {
+            border: 2px solid #c29a8c;
+            position: relative;
+        }
+
+        .package-card.featured::before {
+            content: "⭐ RECOMENDADO";
+            position: absolute;
+            top: -10px;
+            right: 24px;
+            background: #c29a8c;
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 2px 16px;
+            border-radius: 30px;
+            text-transform: uppercase;
+        }
+
+        /* ===== SECCIÓN ILUMINACIÓN ===== */
+        .lighting-section {
+            background: #f7f0ed;
+            padding: 48px 0;
+            border-radius: 30px;
+            margin: 0 0 40px 0;
+        }
+
+        .lighting-section h2 {
+            margin-bottom: 8px;
+        }
+
+        .lighting-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .lighting-item {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px 18px;
+            text-align: center;
+            border: 1px solid #ede3de;
+        }
+
+        .lighting-item h4 {
+            font-size: 0.9rem;
+            color: #b28678;
+            margin-bottom: 4px;
+        }
+
+        .lighting-item .cost {
+            font-weight: 600;
+            color: #2d2a24;
+            font-size: 1rem;
+        }
+
+        .lighting-item p {
+            font-size: 0.85rem;
+            color: #6b5e56;
+            margin-top: 4px;
+        }
+
+        /* ===== OFERTAS ESPECIALES ===== */
+        .special-offers {
+            background: #fff;
+            border-radius: 20px;
+            padding: 36px 32px;
+            margin: 40px 0;
+            border: 1px solid #ede3de;
+        }
+
+        .special-offers h3 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #3a2c2a;
+        }
+
+        .special-offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 16px;
+        }
+
+        .special-offer-item {
+            background: #faf7f5;
+            padding: 16px 20px;
+            border-radius: 14px;
+            text-align: center;
+            border: 1px solid #f3ebe7;
+        }
+
+        .special-offer-item .label {
+            font-weight: 700;
+            color: #b28678;
+            font-size: 0.9rem;
+        }
+
+        .special-offer-item .desc {
+            font-size: 0.9rem;
+            color: #4d413a;
+        }
+
+        /* ===== CONTACTO / FOOTER ===== */
+        .contact-section {
+            background: #2d2a24;
+            color: #e8ddd8;
+            padding: 48px 0;
+            border-radius: 30px 30px 0 0;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: #e8ddd8;
+            margin-bottom: 4px;
+        }
+
+        .contact-section p {
+            color: #c4b6ae;
+            max-width: 500px;
+            margin: 0 auto 20px;
+        }
+
+        .contact-section .contact-btn {
+            display: inline-block;
+            background: #b28678;
+            color: #fff;
+            font-weight: 600;
+            padding: 14px 48px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background 0.2s ease;
+            border: none;
+        }
+
+        .contact-section .contact-btn:hover {
+            background: #9d7263;
+        }
+
+        .footer-bottom {
+            background: #2d2a24;
+            padding: 20px 0 30px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #897b73;
+            border-top: 1px solid #3f3832;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 1.7rem;
+            }
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+            .package-card .card-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+            .hero {
+                padding: 40px 0 30px;
+            }
+            .lighting-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .special-offers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .lighting-grid {
+                grid-template-columns: 1fr;
+            }
+            .package-card {
+                padding: 24px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+    <div class="container">
+        <div class="logo">Ballet <span>en Foco</span></div>
+        <h1>Fotografía de danza<br />con alma</h1>
+        <p>Capturamos la gracia, la disciplina y la emoción del ballet en cada imagen.</p>
+        <div class="badge">Canon R8 · Luz natural + LED</div>
+    </div>
+</header>
+
+<!-- ===== PAQUETES ===== -->
+<section class="packages">
+    <div class="container">
+        <h2>📸 Paquetes para <span class="highlight">contenido</span> y <span class="highlight">sesiones</span></h2>
+        <p class="subtitle">Elige el plan que mejor se adapte a las necesidades de la escuela o a tus fotos personales.</p>
+
+        <div class="packages-grid">
+
+            <!-- ===== PAQUETE 1: REDES SOCIALES ===== -->
+            <div class="package-card featured">
+                <div class="card-header">
+                    <span class="tag">Para la escuela</span>
+                    <span class="price">$3,500 <small>MXN</small></span>
+                </div>
+                <h3>Contenido para Redes</h3>
+                <ul>
+                    <li><strong>2 h</strong> de sesión</li>
+                    <li><strong>30 fotos</strong> editadas (JPG + PNG)</li>
+                    <li><strong>3 Reels</strong> de 15–20 seg</li>
+                    <li>Cobertura: barra, centro, retratos y detalles</li>
+                    <li>Entrega en <strong>3–5 días</strong> vía Drive</li>
+                    <li>Licencia para uso en redes sociales</li>
+                </ul>
+                <a class="btn">Consultar disponibilidad</a>
+            </div>
+
+            <!-- ===== PAQUETE 2: REDES 3 MESES ===== -->
+            <div class="package-card">
+                <div class="card-header">
+                    <span class="tag">Plan anual</span>
+                    <span class="price">$8,500 <small>MXN</small></span>
+                </div>
+                <h3>Contenido Mensual · 3 meses</h3>
+                <ul>
+                    <li><strong>3 sesiones</strong> de 2 h (una por mes)</li>
+                    <li><strong>100 fotos</strong> editadas en total</li>
+                    <li><strong>10 Reels</strong> (3–4 por sesión)</li>
+                    <li>Incluye <strong>1 evento especial</strong> (muestra o presentación)</li>
+                    <li>Entrega parcial después de cada sesión</li>
+                    <li><strong>Bono:</strong> 10 fotos impresas 15×20 cm</li>
+                </ul>
+                <a class="btn">Consultar disponibilidad</a>
+            </div>
+
+            <!-- ===== PAQUETE 3: MINI SESIÓN PERSONAL ===== -->
+            <div class="package-card">
+                <div class="card-header">
+                    <span class="tag">Para alumnas</span>
+                    <span class="price">$1,200 <small>MXN</small></span>
+                </div>
+                <h3>Mini Sesión Ballet</h3>
+                <ul>
+                    <li><strong>30 min</strong> de sesión</li>
+                    <li><strong>1 cambio</strong> de outfit</li>
+                    <li><strong>15 fotos</strong> editadas</li>
+                    <li>2 fondos / locaciones</li>
+                    <li>Entrega en <strong>5 días</strong> (carpeta digital)</li>
+                    <li>Uso personal (redes, impresión, portafolio)</li>
+                </ul>
+                <a class="btn">Agendar sesión</a>
+            </div>
+
+            <!-- ===== PAQUETE 4: ESTÁNDAR PERSONAL ===== -->
+            <div class="package-card">
+                <div class="card-header">
+                    <span class="tag">Para alumnas</span>
+                    <span class="price">$2,200 <small>MXN</small></span>
+                </div>
+                <h3>Sesión Estándar</h3>
+                <ul>
+                    <li><strong>1 h</strong> de sesión</li>
+                    <li><strong>2 cambios</strong> de outfit</li>
+                    <li><strong>30 fotos</strong> editadas</li>
+                    <li>3–4 locaciones (interior/exterior)</li>
+                    <li><strong>Bono:</strong> 1 foto impresa 20×25 cm</li>
+                    <li>Entrega en <strong>5 días</strong></li>
+                </ul>
+                <a class="btn">Agendar sesión</a>
+            </div>
+
+            <!-- ===== PAQUETE 5: PREMIUM PERSONAL ===== -->
+            <div class="package-card featured">
+                <div class="card-header">
+                    <span class="tag">Recomendado</span>
+                    <span class="price">$3,800 <small>MXN</small></span>
+                </div>
+                <h3>Sesión Premium</h3>
+                <ul>
+                    <li><strong>1.5 h</strong> de sesión</li>
+                    <li><strong>3 cambios</strong> de outfit (incluye vestuario)</li>
+                    <li><strong>50 fotos</strong> editadas + 5 en B/N</li>
+                    <li>4–5 locaciones + video de 10 s</li>
+                    <li><strong>Bonos:</strong> 5 fotos impresas 20×25 cm + collage 30×40 cm</li>
+                    <li>Entrega exprés en <strong>3 días</strong></li>
+                </ul>
+                <a class="btn">Agendar sesión</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== ILUMINACIÓN ===== -->
+<section class="lighting-section">
+    <div class="container">
+        <h2>💡 Iluminación <span class="highlight">profesional</span></h2>
+        <p class="subtitle">Aprovechamos al máximo la luz natural y contamos con equipo LED portátil para cada sesión.</p>
+
+        <div class="lighting-grid">
+            <div class="lighting-item">
+                <h4>☀️ Luz natural</h4>
+                <div class="cost">Sin costo extra</div>
+                <p>Sesiones programadas en horas de buena luz (9–11 am / 4–6 pm)</p>
+            </div>
+            <div class="lighting-item">
+                <h4>💡 Panel LED portátil</h4>
+                <div class="cost">+ $500 MXN</div>
+                <p>Godox M1 · Luz continua para relleno o interiores</p>
+            </div>
+            <div class="lighting-item">
+                <h4>📸 Reflector 5 en 1</h4>
+                <div class="cost">Incluido</div>
+                <p>Rebota y suaviza la luz para retratos más profesionales</p>
+            </div>
+            <div class="lighting-item">
+                <h4>⚡ Flash de zapata</h4>
+                <div class="cost">+ $800 MXN</div>
+                <p>Godox TT350C · Para sesiones en espacios cerrados sin ventanas</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== OFERTAS ESPECIALES ===== -->
+<div class="container">
+    <div class="special-offers">
+        <h3>🎁 Ofertas especiales para la escuela</h3>
+        <div class="special-offers-grid">
+            <div class="special-offer-item">
+                <div class="label">10% de descuento</div>
+                <div class="desc">en paquetes personales si 5 o más alumnas contratan sesión.</div>
+            </div>
+            <div class="special-offer-item">
+                <div class="label">Sesión gratuita</div>
+                <div class="desc">para la escuela si 10 alumnas contratan sesión personal.</div>
+            </div>
+            <div class="special-offer-item">
+                <div class="label">10% de comisión</div>
+                <div class="desc">para la escuela por cada sesión contratada a través de su recomendación.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== CONTACTO ===== -->
+<section class="contact-section">
+    <div class="container">
+        <h2>¿Listos para capturar la magia?</h2>
+        <p>Contáctanos para agendar una sesión o resolver cualquier duda. ¡Nos encantará trabajar con ustedes!</p>
+        <a href="mailto:hola@balletenfoco.com" class="contact-btn">📩 hola@balletenfoco.com</a>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer-bottom">
+    <div class="container">
+        <p>© 2026 Ballet en Foco · Fotografía de danza · Hecho con ❤️ para la escuela de ballet</p>
+        <p style="font-size: 0.75rem; color: #6b5e56; margin-top: 4px;">Canon R8 · Edición profesional · Entrega digital en 3–5 días</p>
+    </div>
+</div>
+
+</body>
+</html>
