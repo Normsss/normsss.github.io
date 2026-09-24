@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Propuesta de redes sociales</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #FAF5EF;
+    --ivory-card: #F3EAE1;
+    --burgundy: #6E2A38;
+    --burgundy-deep: #55212C;
+    --blush: #D9A8A0;
+    --gold: #B08D57;
+    --ink: #2B2420;
+    --ink-soft: #6B5F55;
+    --hair: rgba(43,36,32,0.14);
+
+    --bg: var(--ivory);
+    --card: var(--ivory-card);
+    --text: var(--ink);
+    --text-soft: var(--ink-soft);
+    --accent: var(--burgundy);
+    --accent-deep: var(--burgundy-deep);
+    --line: var(--hair);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1E1512;
+      --card: #2A1D19;
+      --text: #F2E9E1;
+      --text-soft: #C9B9AE;
+      --accent: #E6A9A0;
+      --accent-deep: #F0C4BD;
+      --line: rgba(242,233,225,0.16);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1E1512;
+    --card: #2A1D19;
+    --text: #F2E9E1;
+    --text-soft: #C9B9AE;
+    --accent: #E6A9A0;
+    --accent-deep: #F0C4BD;
+    --line: rgba(242,233,225,0.16);
+  }
+
+  * { box-sizing: border-box; }
+  html {
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    -webkit-font-smoothing: antialiased;
+  }
+  .voice {
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  }
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+  .wrap-wide {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 88px 0 56px;
+    text-align: center;
+  }
+  .eyebrow {
+    font-size: 15px;
+    color: var(--text-soft);
+    margin: 0 0 22px;
+    letter-spacing: 0.02em;
+  }
+  .eyebrow em { font-style: italic; color: var(--accent); }
+  h1.headline {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(40px, 7vw, 64px);
+    line-height: 1.08;
+    margin: 0 0 26px;
+    letter-spacing: -0.01em;
+  }
+  h1.headline .it { font-style: italic; color: var(--accent); }
+  .sub {
+    font-size: 18px;
+    color: var(--text-soft);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .arc {
+    display: block;
+    margin: 48px auto 0;
+    width: 220px;
+    height: 60px;
+  }
+
+  /* SECTIONS */
+  section { padding: 56px 0; }
+  section.split {
+    border-top: 0.5px solid var(--line);
+  }
+  .kicker {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--accent);
+    margin: 0 0 18px;
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(28px, 4vw, 36px);
+    line-height: 1.2;
+    margin: 0 0 20px;
+  }
+  p.lead {
+    font-size: 18px;
+    color: var(--text-soft);
+    max-width: 560px;
+  }
+
+  /* PILLARS */
+  .pillar {
+    padding: 26px 0;
+    border-top: 0.5px solid var(--line);
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 24px;
+    align-items: baseline;
+  }
+  .pillar:last-child { border-bottom: 0.5px solid var(--line); }
+  .pillar-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--accent);
+  }
+  .pillar-body p { margin: 0 0 8px; color: var(--text-soft); }
+  .pillar-body strong { color: var(--text); font-weight: 600; }
+
+  /* WORKFLOW */
+  .flow-item {
+    display: flex;
+    gap: 18px;
+    padding: 18px 0;
+    border-top: 0.5px solid var(--line);
+  }
+  .flow-item:last-child { border-bottom: 0.5px solid var(--line); }
+  .flow-mark {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    color: var(--accent);
+    font-size: 20px;
+    width: 28px;
+    flex-shrink: 0;
+  }
+  .flow-body strong { display: block; margin-bottom: 3px; }
+  .flow-body span { color: var(--text-soft); font-size: 15.5px; }
+
+  /* PRICE */
+  .price-block {
+    background: var(--card);
+    border-radius: 4px;
+    padding: 48px 40px;
+    text-align: center;
+  }
+  .price-num {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(52px, 9vw, 76px);
+    color: var(--accent-deep);
+    line-height: 1;
+  }
+  .price-unit {
+    font-size: 16px;
+    color: var(--text-soft);
+    margin-top: 6px;
+  }
+  .includes {
+    text-align: left;
+    max-width: 380px;
+    margin: 36px auto 0;
+    list-style: none;
+    padding: 0;
+  }
+  .includes li {
+    padding: 10px 0;
+    border-top: 0.5px solid var(--line);
+    color: var(--text-soft);
+    font-size: 15.5px;
+  }
+  .includes li:last-child { border-bottom: 0.5px solid var(--line); }
+  .review-note {
+    margin: 32px auto 0;
+    max-width: 420px;
+    font-size: 15px;
+    color: var(--text-soft);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  /* CLOSE */
+  .close {
+    text-align: center;
+    padding: 72px 0 100px;
+  }
+  .close h2 { margin: 0 auto 16px; }
+  .close p.lead { margin: 0 auto 34px; }
+  .signoff {
+    margin-top: 56px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--text-soft);
+  }
+  .signoff .name { color: var(--text); font-weight: 500; }
+
+  a.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--ivory);
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    transition: opacity 0.15s ease;
+  }
+  a.btn:hover { opacity: 0.88; }
+
+  @media (max-width: 480px) {
+    .pillar { grid-template-columns: 1fr; gap: 6px; }
+    .price-block { padding: 40px 22px; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero wrap">
+    <p class="eyebrow">Propuesta preparada para <em>Reverence Dance Studio</em></p>
+    <h1 class="headline">Que cada clase<br>se <span class="it">vea</span>, y se llene.</h1>
+    <p class="sub">Una estrategia de redes sociales pensada para convertir seguidores en alumnas inscritas — no solo en likes.</p>
+  </header>
+
+  <section class="split">
+    <div class="wrap">
+      <p class="kicker">El punto de partida</p>
+      <h2>Las redes existen,<br>pero no están trabajando para ustedes.</h2>
+      <p class="lead">Instagram y Facebook ya están ahí, pero sin una estrategia clara no generan alumnas nuevas — solo ocupan espacio. El objetivo de esta propuesta no es "estar más activas", es construir un sistema constante de contenido que haga que más familias conozcan la escuela, confíen en ella, y agenden una clase de prueba.</p>
+    </div>
+  </section>
+
+  <section class="split">
+    <div class="wrap">
+      <p class="kicker">La propuesta</p>
+      <h2>Tres plataformas,<br>un solo mensaje.</h2>
+
+      <div class="pillar">
+        <div class="pillar-name">Instagram</div>
+        <div class="pillar-body">
+          <p><strong>La vitrina.</strong> Reels de clases en movimiento, carruseles con testimonios de mamás y beneficios del ballet, historias que muestran el día a día.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-name">TikTok</div>
+        <div class="pillar-body">
+          <p><strong>El alcance.</strong> Contenido corto y constante para llegar a familias que todavía no conocen la escuela, aprovechando tendencias y audio popular.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-name">Facebook</div>
+        <div class="pillar-body">
+          <p><strong>La conversión local.</strong> Publicaciones en grupos de la colonia, eventos para clases muestra gratuitas, y el canal donde las mamás realmente buscan actividades para sus hijas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="split">
+    <div class="wrap">
+      <p class="kicker">Cómo se ve el mes</p>
+      <h2>Un flujo simple,<br>sin depender de estar ahí todos los días.</h2>
+
+      <div class="flow-item">
+        <div class="flow-mark">I</div>
+        <div class="flow-body">
+          <strong>Sesión de grabación en la escuela</strong>
+          <span>1–2 veces al mes, con cámara propia — material que rinde para varias semanas.</span>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-mark">II</div>
+        <div class="flow-body">
+          <strong>Contenido del día a día</strong>
+          <span>Clips cortos enviados por WhatsApp se editan y publican el mismo día.</span>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-mark">III</div>
+        <div class="flow-body">
+          <strong>Gestión de comunidad</strong>
+          <span>Respuesta a comentarios y mensajes, dando seguimiento a quien pregunta por inscripción.</span>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-mark">IV</div>
+        <div class="flow-body">
+          <strong>Reporte mensual</strong>
+          <span>Qué se publicó, qué funcionó mejor, y la propuesta para el mes siguiente.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="split">
+    <div class="wrap">
+      <p class="kicker">La inversión</p>
+      <div class="price-block">
+        <div class="price-num">$4,500</div>
+        <div class="price-unit">pesos mexicanos, al mes</div>
+        <ul class="includes">
+          <li>Gestión de Instagram, TikTok y Facebook</li>
+          <li>Sesiones de grabación con equipo propio</li>
+          <li>Edición y publicación de todo el contenido</li>
+          <li>Gestión de comentarios y mensajes</li>
+          <li>Reporte mensual de resultados</li>
+        </ul>
+        <p class="review-note">A los tres meses revisamos juntas los resultados, y ajustamos la tarifa según lo que hayamos logrado — sin sorpresas, sin compromisos a largo plazo desde el día uno.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="wrap">
+      <p class="kicker" style="text-align:center;">Empecemos</p>
+      <h2>Me encantaría contarte<br>cómo lo pondría en marcha.</h2>
+      <p class="lead" style="margin-left:auto; margin-right:auto; text-align:center;">Con gusto platicamos los detalles y ajustamos lo que haga falta antes de arrancar.</p>
+      <a class="btn" href="https://wa.me/525546134356">Escribir por WhatsApp</a>
+      <p class="signoff">Preparado con cariño por <span class="name">Plataforma LAB</span></p>
+    </div>
+  </section>
+
+</body>
+</html>
